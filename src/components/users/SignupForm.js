@@ -27,13 +27,14 @@ class SignupForm extends React.Component {
 			},
 			body: JSON.stringify(this.state)
 		})
-		.then(res => res.json())
-    .then(console.log)
-	// 	.then((response) => {
+		.then(resp => resp.json())
+    // .then(console.log)
+		.then((resp) => {
+      this.props.setCurrentUser(resp)
+    })
 	// 		if (response.errors){
 	// 			alert(response.errors)
 	// 		} else {
-	// 			this.props.setCurrentUser(response)
 	// 		}
 	// 	})
 	}
@@ -52,15 +53,15 @@ class SignupForm extends React.Component {
         <Form>
       	    <Form.Field>
       	      <label>Name</label>
-      	      <input onChange={this.handleChange} name="name" value={this.state.name} placeholder='Name' />
+      	      <input onChange={this.handleChange} name="name" value={this.state.name} placeholder='Name'autoComplete='off' />
       	    </Form.Field>
       	    <Form.Field>
       	      <label>Password</label>
-      	      <input onChange={this.handleChange} type="password" name="password" value={this.state.password} placeholder='Password' />
+      	      <input onChange={this.handleChange} type="password" name="password" value={this.state.password} placeholder='Password' autoComplete='off'/>
       	    </Form.Field>
       	    <Form.Field>
       	      <label>Password Confirmation</label>
-      	      <input onChange={this.handleChange} type="password" name="passwordConfirmation" value={this.state.passwordConfirmation} placeholder='Password Confirmation' />
+      	      <input onChange={this.handleChange} type="password" name="passwordConfirmation" value={this.state.passwordConfirmation} placeholder='Password Confirmation'autoComplete='off' />
       	    </Form.Field>
       	    <Button type='submit'>Submit</Button>
       	  </Form>

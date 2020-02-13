@@ -6,6 +6,7 @@ import { Grid } from 'semantic-ui-react'
 import Navbar from './components/navbar/Navbar'
 import LoginForm from './components/users/LoginForm'
 import SignupForm from './components/users/SignupForm'
+import PetContainer from './containers/PetContainer'
 
 class App extends Component {
 	state = {
@@ -67,6 +68,7 @@ class App extends Component {
 	render() {
 		console.log(this.state)
 		return (
+			<div>
 			<Grid>
 				<Navbar />
 				<Grid.Row centered>
@@ -80,6 +82,9 @@ class App extends Component {
 					</Switch>
 				</Grid.Row>
 			</Grid>
+			<PetContainer/>
+			</div>
+
 		);
 	}
 }
