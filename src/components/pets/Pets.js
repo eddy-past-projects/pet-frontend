@@ -1,5 +1,9 @@
 import React from 'react'
+import { Card } from 'semantic-ui-react'
+
 import PetCard from './PetCard'
+import UserPetCard from './UserPetCard'
+
 import './Pets.css'
 
 const Pets = props => {
@@ -10,7 +14,10 @@ const Pets = props => {
     : []
   console.log(petCards, props)
   return (<div>
+    <Card.Group centered>
+
     {petCards}
+  </Card.Group>
   </div>)
 }
 
